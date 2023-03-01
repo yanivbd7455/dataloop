@@ -5,15 +5,15 @@ const TODO_ONE = "Walk the dog";
 const TODO_TWO = "Haircut";
 const TODO_THREE = "Read a book";
 
-const test = base.extend<{ todoPage: TodoPage }>({
+const test = base.extend<{ loginPage: LoginPage }>({
   todoPage: async ({ page }, use) => {
-    const todoPage = new TodoPage(page);
-    await todoPage.goto();
+    const loginPage = new LoginPage(page);
+    await loginPage.goto();
 
-    const length = await todoPage.listSize();
+    const length = await loginPage.listSize();
     expect(length === 0).toBeTruthy();
 
-    await use(todoPage);
+    await use(loginPage);
   },
 });
 
