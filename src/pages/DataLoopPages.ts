@@ -1,16 +1,16 @@
 import type { Page } from "@playwright/test";
 import {
-  todoInput,
+  dataloopInput,
   labelWithText,
   removeButton,
   inputCheckbox,
   linkWithText,
   filters,
-  todoItemsLabels,
-  todoItemsList,
-} from "../targets/todos";
+  dataloopItemsLabels,
+  dataloopItemsList,
+} from "../targets/dataloop";
 
-export class TodoPage {
+export class DataLoop {
   readonly page: Page;
 
   constructor(page: Page) {
@@ -18,9 +18,19 @@ export class TodoPage {
   }
 
   async goto() {
-    await this.page.goto("https://todomvc.com/examples/react/#/");
+    await this.page.goto("https://console.dataloop.ai/welcome");
   }
 
+  async loginInserUser(user: string) {
+    await this.page.fill(todoInput, todo);
+    await this.page.press(todoInput, "Enter");
+  }
+  
+  async loginInserPsw(psw: string) {
+    await this.page.fill(todoInput, todo);
+    await this.page.press(todoInput, "Enter");
+  }
+  
   async addTodo(todo: string) {
     await this.page.fill(todoInput, todo);
     await this.page.press(todoInput, "Enter");
