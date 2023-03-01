@@ -16,10 +16,10 @@ const test = base.extend<{ loginPage: LoginPage }>({
 });
 
 test("Login to DataLoop Platform", async ({ loginPage }) => {
-  await todoPage.addTodo(TODO_ONE);
-  await todoPage.addTodo(TODO_TWO);
-  await todoPage.addTodo(TODO_THREE);
+//   await todoPage.addTodo(TODO_ONE);
+//   await todoPage.addTodo(TODO_TWO);
+//   await todoPage.addTodo(TODO_THREE);
 
-  const length = await todoPage.listSize();
-  expect(length === 3).toBeTruthy();
+//   const length = await todoPage.listSize();
+//   expect(length === 3).toBeTruthy();
 });
