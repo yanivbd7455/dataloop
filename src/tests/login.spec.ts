@@ -1,5 +1,5 @@
 import { test as base, expect } from "@playwright/test";
-import { TodoPage } from "../pages/TodoPage";
+import { LoginPage } from "../pages/LoginPage";
 
 const TODO_ONE = "Walk the dog";
 const TODO_TWO = "Haircut";
