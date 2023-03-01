@@ -1,0 +1,20 @@
+{
+  "name": "playwright-dataloop",
+  "version": "1.0.0",
+  "description": "playwright-dataloop",
+  "main": "index.js",
+  "author": "Yaniv Ben Dror",
+  "license": "DL",
+  "scripts": {
+    "install-browsers": "npx playwright install",
+    "test": "npx playwright test",
+    "test-chromium": "npx playwright test --project chromium",
+    "test-firefox": "npx playwright test --project firefox",
+    "test-webkit": "npx playwright test --project webkit",
+    "codegen": "npx playwright codegen https://todomvc.com/examples/react/#/",
+    "debug": "set PWDEBUG=1&& npx playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.17.126"
+  }
+}
