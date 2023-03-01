@@ -10,7 +10,7 @@ import {
   dataloopItemsList,
 } from "../targets/dataloop";
 
-export class DataLoop {
+export class LoginPage {
   readonly page: Page;
 
   constructor(page: Page) {
