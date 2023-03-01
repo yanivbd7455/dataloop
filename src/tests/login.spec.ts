@@ -6,18 +6,16 @@ const TODO_TWO = "Haircut";
 const TODO_THREE = "Read a book";
 
 const test = base.extend<{ loginPage: LoginPage }>({
-  todoPage: async ({ page }, use) => {
+  loginPage: async ({ page }, use) => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();
-
-    const length = await loginPage.listSize();
-    expect(length === 0).toBeTruthy();
-
-    await use(loginPage);
+   
+    const loginBtn = await loginPage.getByRole('button', { name: 'Sign Up / Login' });
+    expect(loginBtn === 0).toBeTruthy();
   },
 });
 
-test("Adding three items to an empty todo list", async ({ todoPage }) => {
+test("Login to DataLoop Platform", async ({ loginPage }) => {
   await todoPage.addTodo(TODO_ONE);
   await todoPage.addTodo(TODO_TWO);
   await todoPage.addTodo(TODO_THREE);
