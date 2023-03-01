@@ -22,13 +22,13 @@ export class LoginPage {
   }
 
   async loginInserUser(user: string) {
-    await this.page.fill(todoInput, todo);
-    await this.page.press(todoInput, "Enter");
+    await this.page.fill(dataloopInput, user);
+    await this.page.press(dataloopInput, "Enter");
   }
   
   async loginInserPsw(psw: string) {
-    await this.page.fill(todoInput, todo);
-    await this.page.press(todoInput, "Enter");
+    await this.page.fill(dataloopInput, psw);
+    await this.page.press(dataloopInput, "Enter");
   }
   
 //   async addTodo(todo: string) {
