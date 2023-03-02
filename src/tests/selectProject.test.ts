@@ -17,7 +17,7 @@ test("Select Project", async ({ mainDashboard }) => {
   await mainDashboard.insertUserName(USER)
   await mainDashboard.insertPsw(PSW);
   
-}
+});
 
   test("Select Dataset", async ({ mainDashboard }) => {
   await mainDashboard.clickLoginBtn();
