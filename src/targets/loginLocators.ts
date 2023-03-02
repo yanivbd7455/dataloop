@@ -1,17 +1,10 @@
-export const loginBtn = ".login-btn";  // xpath or other locator  
+/*
+xpath or other locator methods for web element reside in login page
+*/
 
-// export const dataloopInput = ".new-dataloop";
+export const loginBtn = ".login-btn";
 
-// export const inputCheckbox = 'input[type="checkbox"]';
+export const userTextBox = ".user-text-box"; 
 
-// export const removeButton = "button.destroy";
+export const pswTextBox = ".psw-text-box"; 
 
-// export const labelWithText = (text: string) => `label:has-text("${text}")`;
-
-// export const linkWithText = (text: string) => `a:has-text("${text}")`;
-
-// export const filters = ".filters";
-
-// export const dataloopItemsList = ".dataloop-list > li";
-
-// export const dataloopItemsLabels = ".dataloop-list > li label";
