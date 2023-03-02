@@ -1,14 +1,14 @@
 import type { Page } from "@playwright/test";
 import {
-  dataloopInput,
-  labelWithText,
-  removeButton,
-  inputCheckbox,
-  linkWithText,
-  filters,
-  dataloopItemsLabels,
-  dataloopItemsList,
-} from "../targets/dataloop";
+  loginBtn,
+//   labelWithText,
+//   removeButton,
+//   inputCheckbox,
+//   linkWithText,
+//   filters,
+//   dataloopItemsLabels,
+//   dataloopItemsList,
+} from "../targets/loginLocators";
 
 export class LoginPage {
   readonly page: Page;
@@ -21,41 +21,36 @@ export class LoginPage {
     await this.page.goto("https://console.dataloop.ai/welcome");
   }
 
-  async loginInserUser(user: string) {
-    await this.page.fill(dataloopInput, user);
-    await this.page.press(dataloopInput, "Enter");
+  async clickLoginBtn() {
+    await this.page.locator('button:text("Sign Up / Login")').click();
   }
-  
-  async loginInserPsw(psw: string) {
-    await this.page.fill(dataloopInput, psw);
-    await this.page.press(dataloopInput, "Enter");
+
+  async insertUserName(user: string) {
+    await this.page.click('button:text("Sign Up / Login")');
+    await this.page.getByPlaceholder('yours@example.com').fill(user);
   }
+
+  async insertPsw(psw: string) {
+    await this.page.click('button:text("Sign Up / Login")');
+    await this.page.getByPlaceholder('your password').fill(psw);
+  }
+
+//   async loginInserUser(user: string , psw: string) {
+//     // await this.page.fill(dataloopInput, user);
+//     // await this.page.press(dataloopInput, "Enter");
+
+//     await this.page.click('button:text("Sign Up / Login")')
+//     //() name: 'Sign Up / Login' }).click();
+//     await this.page.getByPlaceholder('yours@example.com').fill(user);
+//     await this.page.getByPlaceholder('your password').click();
+//     await this.page.getByPlaceholder('your password').fill(psw);
+//     await this.page.getByRole('button', { name: 'Log In', exact: true }).click();
+//     // await this.page.goto('https://console.dataloop.ai/projects');
+//     // await this.page.getByRole('button', { name: 'Go to project' }).click();
+//   }
   
-//   async addTodo(todo: string) {
-//     await this.page.fill(todoInput, todo);
-//     await this.page.press(todoInput, "Enter");
-//   }
-
-//   async removeTodo(todo: string) {
-//     await this.page.hover(`${labelWithText(todo)}`);
-//     await this.page.click(`${removeButton}:near(${labelWithText(todo)})`);
-//   }
-
-//   async markTodoCompleted(todo: string) {
-//     await this.page.check(`${inputCheckbox}:near(${labelWithText(todo)})`);
-//   }
-
-//   async filterItemsBy(status: string) {
-//     await this.page.click(`${linkWithText(status)}:near(${filters})`);
-//   }
-
-//   async listItems() {
-//     return this.page.$$eval(todoItemsLabels, (labels) =>
-//       labels.map((label) => label.textContent)
-//     );
-//   }
-
-//   async listSize() {
-//     return this.page.$$eval(todoItemsList, (items) => items.length);
-//   }
+//   async loginInserPsw(psw: string) {
+//     await this.page.fill(dataloopInput, psw);
+//     await this.page.press(dataloopInput, "Enter");
+  }
 }
