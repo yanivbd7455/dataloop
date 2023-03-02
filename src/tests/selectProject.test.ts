@@ -3,7 +3,6 @@ import { MainDashboard } from "../pages/MainDashboard";
 
 //golden data per test
 const PROJECT = "automation";
-const DATASET = "ImageDataSet";
 
 
 const test = base.extend<{ mainDashboard: MainDashboard }>({
@@ -13,15 +12,6 @@ const test = base.extend<{ mainDashboard: MainDashboard }>({
 });
 
 test("Select Project", async ({ mainDashboard }) => {
-  await mainDashboard.clickLoginBtn();
-  await mainDashboard.insertUserName(USER)
-  await mainDashboard.insertPsw(PSW);
-  
-});
-
-  test("Select Dataset", async ({ mainDashboard }) => {
-  await mainDashboard.clickLoginBtn();
-  await mainDashboard.insertUserName(USER)
-  await mainDashboard.insertPsw(PSW);
-  
+  await mainDashboard.selectProject(PROJECT);
+ 
 });
