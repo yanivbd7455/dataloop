@@ -1,3 +1,5 @@
+export const LoginBtn = ".login-btn";  // xpath or other locator  
+
 export const dataloopInput = ".new-dataloop";
 
 export const inputCheckbox = 'input[type="checkbox"]';
