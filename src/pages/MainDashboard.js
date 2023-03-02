@@ -5,6 +5,8 @@ import {
   projectTextBox,
   projectDropDownList,
   projectFirstList,
+  datasetSearchTextBox,
+  datasetSearchFirstList,
 } from "../targets/mainDashboardLocators";
 
 export class MainDashboard {
@@ -19,6 +21,11 @@ export class MainDashboard {
     await this.page.locator(projectDropDownList).click();
     await this.page.locator(projectTextBox).fill(projectName);
     await this.page.locator(projectFirstList).click(); 
+  }
+
+  async selectDataSet(datasetName: string) {
+    await this.page.locator(datasetSearchTextBox).fill(datasetName);
+//  await this.page.locator(projectFirstList).click(); 
   }
 
 }
