@@ -1,4 +1,4 @@
-export const LoginBtn = ".login-btn";  // xpath or other locator  
+export const loginBtn = ".login-btn";  // xpath or other locator  
 
 export const dataloopInput = ".new-dataloop";
 
